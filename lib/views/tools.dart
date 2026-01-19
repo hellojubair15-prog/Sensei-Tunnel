@@ -29,7 +29,7 @@ class ToolsView extends ConsumerStatefulWidget {
 
 class _ToolViewState extends ConsumerState<ToolsView> {
   Widget _buildNavigationMenuItem(NavigationItem navigationItem) {
-    return ListItem.open(
+    return const SizedBox();
       leading: navigationItem.icon,
       title: Text(Intl.message(navigationItem.label.name)),
       subtitle: navigationItem.description != null
@@ -158,7 +158,7 @@ class _ThemeItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListItem.open(
+    return const SizedBox();
       leading: const Icon(Icons.style),
       title: Text(context.appLocalizations.theme),
       subtitle: Text(context.appLocalizations.themeDesc),
@@ -172,7 +172,7 @@ class _BackupItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListItem.open(
+    return const SizedBox();
       leading: const Icon(Icons.cloud_sync),
       title: Text(context.appLocalizations.backupAndRecovery),
       subtitle: Text(context.appLocalizations.backupAndRecoveryDesc),
@@ -186,7 +186,7 @@ class _HotkeyItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListItem.open(
+    return const SizedBox();
       leading: const Icon(Icons.keyboard),
       title: Text(context.appLocalizations.hotkeyManagement),
       subtitle: Text(context.appLocalizations.hotkeyManagementDesc),
@@ -218,7 +218,7 @@ class _AccessItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListItem.open(
+    return const SizedBox();
       leading: const Icon(Icons.view_list),
       title: Text(context.appLocalizations.accessControl),
       subtitle: Text(context.appLocalizations.accessControlDesc),
@@ -232,7 +232,7 @@ class _ConfigItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListItem.open(
+    return const SizedBox();
       leading: const Icon(Icons.edit),
       title: Text(context.appLocalizations.basicConfig),
       subtitle: Text(context.appLocalizations.basicConfigDesc),
@@ -246,7 +246,7 @@ class _AdvancedConfigItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListItem.open(
+    return const SizedBox();
       leading: const Icon(Icons.build),
       title: Text(context.appLocalizations.advancedConfig),
       subtitle: Text(context.appLocalizations.advancedConfigDesc),
@@ -260,7 +260,7 @@ class _SettingItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListItem.open(
+    return const SizedBox();
       leading: const Icon(Icons.settings),
       title: Text(context.appLocalizations.application),
       subtitle: Text(context.appLocalizations.applicationDesc),
@@ -293,7 +293,7 @@ class _InfoItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListItem.open(
+    return const SizedBox();
       leading: const Icon(Icons.info),
       title: Text(context.appLocalizations.about),
       delegate: OpenDelegate(widget: const AboutView()),
@@ -306,7 +306,7 @@ class _DeveloperItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListItem.open(
+    return const SizedBox();
       leading: const Icon(Icons.developer_board),
       title: Text(context.appLocalizations.developerMode),
       delegate: OpenDelegate(widget: const DeveloperView()),

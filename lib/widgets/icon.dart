@@ -25,7 +25,7 @@ class CommonTargetIcon extends StatelessWidget {
       return Image.memory(
         base64,
         gaplessPlayback: true,
-        errorBuilder: (_, error, _) {
+        errorBuilder: (_, error, __) {
           return _defaultIcon();
         },
       );
@@ -93,16 +93,16 @@ class _ImageCacheWidgetState extends State<ImageCacheWidget> {
   Widget build(BuildContext context) {
     return ValueListenableBuilder<File?>(
       valueListenable: _imageNotifier,
-      builder: (_, data, _) {
+      builder: (_, data, __) {
         if (data == null) {
           return widget.defaultWidget;
         }
         return widget.src.isSvg
             ? SvgPicture.file(
                 data,
-                errorBuilder: (_, _, _) => widget.defaultWidget,
+                errorBuilder: (_, __, ___) => widget.defaultWidget,
               )
-            : Image.file(data, errorBuilder: (_, _, _) => widget.defaultWidget);
+            : Image.file(data, errorBuilder: (_, __, ___) => widget.defaultWidget);
       },
     );
   }
