@@ -1,4 +1,5 @@
 import 'package:sensei_tunnel/views/backup_and_recovery.dart';
+import 'package:sensei_tunnel/views/backup_and_recovery.dart';
 import 'dart:io';
 
 import 'package:sensei_tunnel/common/common.dart';
@@ -185,7 +186,7 @@ class _BackupItem extends StatelessWidget {
       subtitle: Text(context.appLocalizations.backupAndRecoveryDesc),
       onTap: () {
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (_) => BackupAndRecoveryView()),
+          MaterialPageRoute(builder: (_) => const BackupAndRecoveryView()),
         );
       },
     );
