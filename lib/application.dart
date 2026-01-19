@@ -4,7 +4,6 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:sensei_tunnel/common/common.dart';
 import 'package:sensei_tunnel/core/core.dart';
 import 'package:sensei_tunnel/l10n/l10n.dart';
-import 'package:sensei_tunnel/manager/hotkey_manager.dart';
 import 'package:sensei_tunnel/manager/manager.dart';
 import 'package:sensei_tunnel/plugins/app.dart';
 import 'package:sensei_tunnel/providers/providers.dart';
@@ -29,9 +28,7 @@ class ApplicationState extends ConsumerState<Application> {
   final _pageTransitionsTheme = const PageTransitionsTheme(
     builders: <TargetPlatform, PageTransitionsBuilder>{
       TargetPlatform.android: commonSharedXPageTransitions,
-      TargetPlatform.windows: commonSharedXPageTransitions,
-      TargetPlatform.linux: commonSharedXPageTransitions,
-      TargetPlatform.macOS: commonSharedXPageTransitions,
+      TargetPlatform.iOS: commonSharedXPageTransitions,
     },
   );
 
@@ -66,13 +63,7 @@ class ApplicationState extends ConsumerState<Application> {
   }
 
   Widget _buildPlatformState({required Widget child}) {
-    if (system.isDesktop) {
-      return WindowManager(
-        child: TrayManager(
-          child: HotKeyManager(child: ProxyManager(child: child)),
-        ),
-      );
-    }
+    // Desktop managers removed for mobile build
     return AndroidManager(child: TileManager(child: child));
   }
 
@@ -94,9 +85,7 @@ class ApplicationState extends ConsumerState<Application> {
   }
 
   Widget _buildPlatformApp({required Widget child}) {
-    if (system.isDesktop) {
-      return WindowHeaderContainer(child: child);
-    }
+    // Desktop header removed for mobile build
     return VpnManager(child: child);
   }
 
@@ -130,7 +119,7 @@ class ApplicationState extends ConsumerState<Application> {
               ),
             );
           },
-          scrollBehavior: BaseScrollBehavior(),
+          scrollBehavior: const MaterialScrollBehavior(),
           title: appName,
           locale: utils.getLocaleForString(locale),
           supportedLocales: AppLocalizations.delegate.supportedLocales,
