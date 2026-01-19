@@ -46,8 +46,3 @@ class _MinimizeItem extends ConsumerWidget {
     );
   }
 }
-
-      ),
-    );
-  }
-}

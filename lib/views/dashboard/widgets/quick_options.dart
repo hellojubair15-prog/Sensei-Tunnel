@@ -1,5 +1,7 @@
 import 'package:sensei_tunnel/common/common.dart';
-import 'package:sensei_tunnel/providers/providers.dart';
+// Importing config explicitly to ensure configProvider is found
+import 'package:sensei_tunnel/providers/config.dart';
+import 'package:sensei_tunnel/providers/providers.dart'; 
 import 'package:sensei_tunnel/models/models.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
