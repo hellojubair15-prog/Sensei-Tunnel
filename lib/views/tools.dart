@@ -184,7 +184,7 @@ class _BackupItem extends StatelessWidget {
       subtitle: Text(context.appLocalizations.backupAndRecoveryDesc),
       onTap: () {
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (_) => const BackupAndRecoveryView()),
+          MaterialPageRoute(builder: (_) => BackupAndRecoveryView()),
         );
       },
     );

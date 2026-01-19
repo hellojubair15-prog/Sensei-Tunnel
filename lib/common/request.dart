@@ -23,7 +23,7 @@ class Request {
         final client = HttpClient();
         client.findProxy = (Uri uri) {
           client.userAgent = globalState.ua;
-          return Sensei TunnelHttpOverrides.handleFindProxy(uri);
+          return SenseiTunnelHttpOverrides.handleFindProxy(uri);
         };
         return client;
       },

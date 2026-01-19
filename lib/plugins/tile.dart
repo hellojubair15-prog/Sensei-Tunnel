@@ -1,56 +1,13 @@
-import 'dart:async';
+import 'package:flutter/material.dart';
 
-import 'package:sensei_tunnel/common/constant.dart';
-import 'package:sensei_tunnel/common/system.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
-
-abstract mixin class TileListener {
-  void onStart() {}
-
-  void onStop() {}
-
-  void onDetached() {}
-}
-
+// Dummy Tile implementation for Mobile
 class Tile {
-  final MethodChannel _channel = const MethodChannel('$packageName/tile');
-
-  Tile._() {
-    _channel.setMethodCallHandler(_methodCallHandler);
-  }
-
-  static final Tile instance = Tile._();
-
-  final ObserverList<TileListener> _listeners = ObserverList<TileListener>();
-
-  Future<void> _methodCallHandler(MethodCall call) async {
-    for (final TileListener listener in _listeners) {
-      switch (call.method) {
-        case 'start':
-          listener.onStart();
-          break;
-        case 'stop':
-          listener.onStop();
-          break;
-        case 'detached':
-          listener.onDetached();
-          break;
-      }
-    }
-  }
-
-  bool get hasListeners {
-    return _listeners.isNotEmpty;
-  }
-
-  void addListener(TileListener listener) {
-    _listeners.add(listener);
-  }
-
-  void removeListener(TileListener listener) {
-    _listeners.remove(listener);
-  }
+  void addListener(TileListener listener) {}
+  void removeListener(TileListener listener) {}
 }
 
-final tile = system.isAndroid ? Tile.instance : null;
+final Tile? tile = Tile();
+
+mixin TileListener {
+  void onStop() {}
+}

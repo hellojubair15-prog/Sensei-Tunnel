@@ -299,7 +299,7 @@ class CommonScaffoldState extends State<CommonScaffold> {
         children: [
           ValueListenableBuilder(
             valueListenable: _keywordsNotifier,
-            builder: (_, keywords, _) {
+            builder: (_, keywords, __) {
               if (widget.onKeywordsUpdate != null) {
                 WidgetsBinding.instance.addPostFrameCallback((_) {
                   widget.onKeywordsUpdate!(keywords);

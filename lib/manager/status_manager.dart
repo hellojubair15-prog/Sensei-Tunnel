@@ -108,7 +108,7 @@ class StatusManagerState extends State<StatusManager> {
                   duration: animateDuration,
                   child: ValueListenableBuilder(
                     valueListenable: _messagesNotifier,
-                    builder: (_, messages, _) {
+                    builder: (_, messages, __) {
                       return FadeThroughBox(
                         alignment: Alignment.centerRight,
                         child: messages.isEmpty

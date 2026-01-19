@@ -182,7 +182,7 @@ enum KeyboardModifier {
 }
 
 extension KeyboardModifierExt on KeyboardModifier {
-  HotKeyModifier toHotKeyModifier() {
+  dynamic toHotKeyModifier() {
     return switch (this) {
       KeyboardModifier.alt => HotKeyModifier.alt,
       KeyboardModifier.capsLock => HotKeyModifier.capsLock,
@@ -418,3 +418,12 @@ enum ScrollPositionCacheKey { tools, profiles, proxiesList, proxiesTabList }
 enum QueryTag { proxies, access }
 
 enum CoreStatus { connecting, connected, disconnected }
+
+class HotKeyModifier {
+  static const alt = null;
+  static const capsLock = null;
+  static const control = null;
+  static const fn = null;
+  static const meta = null;
+  static const shift = null;
+}

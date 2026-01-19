@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:sensei_tunnel/common/common.dart';
 import 'package:sensei_tunnel/state.dart';
 
-class Sensei TunnelHttpOverrides extends HttpOverrides {
+class SenseiTunnelHttpOverrides extends HttpOverrides {
   static String handleFindProxy(Uri url) {
     if ([localhost].contains(url.host)) {
       return 'DIRECT';

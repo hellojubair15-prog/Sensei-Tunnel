@@ -1,227 +1,34 @@
 import 'package:sensei_tunnel/common/common.dart';
-import 'package:sensei_tunnel/providers/config.dart';
-import 'package:sensei_tunnel/views/config/network.dart';
-import 'package:sensei_tunnel/widgets/widgets.dart';
+import 'package:sensei_tunnel/providers/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class TUNButton extends StatelessWidget {
-  const TUNButton({super.key});
+class QuickOptions extends ConsumerWidget {
+  const QuickOptions({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: getWidgetHeight(1),
-      child: CommonCard(
-        onPressed: () {
-          showSheet(
-            context: context,
-            builder: (_, type) {
-              return AdaptiveSheetScaffold(
-                type: type,
-                body: generateListView(
-                  generateSection(
-                    items: [
-                      if (system.isDesktop) const TUNItem(),
-                      if (system.isMacOS) const AutoSetSystemDnsItem(),
-                      const TunStackItem(),
-                    ],
-                  ),
-                ),
-                title: appLocalizations.tun,
-              );
-            },
-          );
-        },
-        info: Info(
-          label: appLocalizations.tun,
-          iconData: Icons.stacked_line_chart,
-        ),
-        child: Container(
-          padding: baseInfoEdgeInsets.copyWith(top: 4, bottom: 8, right: 8),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Flexible(
-                flex: 1,
-                child: TooltipText(
-                  text: Text(
-                    appLocalizations.options,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(
-                      context,
-                    ).textTheme.titleSmall?.adjustSize(-2).toLight,
-                  ),
-                ),
-              ),
-              Consumer(
-                builder: (_, ref, __) {
-                  final enable = ref.watch(
-                    patchClashConfigProvider.select(
-                      (state) => state.tun.enable,
-                    ),
-                  );
-                  return Switch(
-                    value: enable,
-                    onChanged: (value) {
-                      ref
-                          .read(patchClashConfigProvider.notifier)
-                          .updateState(
-                            (state) => state.copyWith.tun(enable: value),
-                          );
-                    },
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
+  Widget build(BuildContext context, WidgetRef ref) {
+    final tunProps = ref.watch(
+      configProvider.select((value) => value.config.tun),
     );
-  }
-}
+    final enableTun = tunProps.enable;
 
-class SystemProxyButton extends StatelessWidget {
-  const SystemProxyButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: getWidgetHeight(1),
-      child: CommonCard(
-        onPressed: () {
-          showSheet(
-            context: context,
-            builder: (_, type) {
-              return AdaptiveSheetScaffold(
-                type: type,
-                body: generateListView(
-                  generateSection(
-                    items: [SystemProxyItem(), BypassDomainItem()],
-                  ),
-                ),
-                title: appLocalizations.systemProxy,
-              );
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          ActionChip(
+            avatar: Icon(Icons.vpn_key, size: 18, color: enableTun ? Colors.white : null),
+            label: const Text("TUN Mode"),
+            backgroundColor: enableTun ? context.colorScheme.primary : null,
+            onPressed: () {
+               ref.read(configProvider.notifier).configPatch((config) {
+                return config.copyWith.tun(enable: !enableTun);
+              });
             },
-          );
-        },
-        info: Info(
-          label: appLocalizations.systemProxy,
-          iconData: Icons.shuffle,
-        ),
-        child: Container(
-          padding: baseInfoEdgeInsets.copyWith(top: 4, bottom: 8, right: 8),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Flexible(
-                flex: 1,
-                child: TooltipText(
-                  text: Text(
-                    appLocalizations.options,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(
-                      context,
-                    ).textTheme.titleSmall?.adjustSize(-2).toLight,
-                  ),
-                ),
-              ),
-              Consumer(
-                builder: (_, ref, __) {
-                  final systemProxy = ref.watch(
-                    networkSettingProvider.select((state) => state.systemProxy),
-                  );
-                  return Switch(
-                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    value: systemProxy,
-                    onChanged: (value) {
-                      ref
-                          .read(networkSettingProvider.notifier)
-                          .updateState(
-                            (state) => state.copyWith(systemProxy: value),
-                          );
-                    },
-                  );
-                },
-              ),
-            ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class VpnButton extends StatelessWidget {
-  const VpnButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: getWidgetHeight(1),
-      child: CommonCard(
-        onPressed: () {
-          showSheet(
-            context: context,
-            builder: (_, type) {
-              return AdaptiveSheetScaffold(
-                type: type,
-                body: generateListView(
-                  generateSection(
-                    items: [
-                      const VPNItem(),
-                      const VpnSystemProxyItem(),
-                      const TunStackItem(),
-                    ],
-                  ),
-                ),
-                title: 'VPN',
-              );
-            },
-          );
-        },
-        info: Info(label: 'VPN', iconData: Icons.stacked_line_chart),
-        child: Container(
-          padding: baseInfoEdgeInsets.copyWith(top: 4, bottom: 8, right: 8),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Flexible(
-                flex: 1,
-                child: TooltipText(
-                  text: Text(
-                    appLocalizations.options,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(
-                      context,
-                    ).textTheme.titleSmall?.adjustSize(-2).toLight,
-                  ),
-                ),
-              ),
-              Consumer(
-                builder: (_, ref, __) {
-                  final enable = ref.watch(
-                    vpnSettingProvider.select((state) => state.enable),
-                  );
-                  return Switch(
-                    value: enable,
-                    onChanged: (value) {
-                      ref
-                          .read(vpnSettingProvider.notifier)
-                          .update((state) => state.copyWith(enable: value));
-                    },
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
+        ],
       ),
     );
   }

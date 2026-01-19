@@ -195,7 +195,7 @@ class AppSidebarContainer extends ConsumerWidget {
                     if (system.isMacOS) SizedBox(height: 22),
                     SizedBox(height: 10),
                     if (!system.isMacOS) ...[
-                      ClipRect(child: AppIcon()),
+                      ClipRect(child: const SizedBox()),
                       SizedBox(height: 12),
                     ],
                     Expanded(

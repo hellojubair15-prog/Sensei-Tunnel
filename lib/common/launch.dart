@@ -1,49 +1,8 @@
-import 'dart:async';
-import 'dart:io';
-
-import 'package:flutter/foundation.dart';
-
-import 'constant.dart';
-import 'system.dart';
-
 class AutoLaunch {
-  static AutoLaunch? _instance;
-
-  AutoLaunch._internal() {
-    launchAtStartup.setup(
-      appName: appName,
-      appPath: Platform.resolvedExecutable,
-    );
-  }
-
-  factory AutoLaunch() {
-    _instance ??= AutoLaunch._internal();
-    return _instance!;
-  }
-
-  Future<bool> get isEnable async {
-    return await launchAtStartup.isEnabled();
-  }
-
-  Future<bool> enable() async {
-    return await launchAtStartup.enable();
-  }
-
-  Future<bool> disable() async {
-    return await launchAtStartup.disable();
-  }
-
-  Future<void> updateStatus(bool isAutoLaunch) async {
-    if (kDebugMode) {
-      return;
-    }
-    if (await isEnable == isAutoLaunch) return;
-    if (isAutoLaunch == true) {
-      enable();
-    } else {
-      disable();
-    }
-  }
+  Future<void> setup({required String appName, required String appPath}) async {}
+  Future<bool> isEnabled() async => false;
+  Future<void> enable() async {}
+  Future<void> disable() async {}
 }
 
-final autoLaunch = system.isDesktop ? AutoLaunch() : null;
+final AutoLaunch launchAtStartup = AutoLaunch();
