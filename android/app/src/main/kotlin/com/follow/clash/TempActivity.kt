@@ -1,9 +1,9 @@
-package com.follow.clash
+package com.sensei.tunnel
 
 import android.app.Activity
 import android.os.Bundle
-import com.follow.clash.common.QuickAction
-import com.follow.clash.common.action
+import com.sensei.tunnel.common.QuickAction
+import com.sensei.tunnel.common.action
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

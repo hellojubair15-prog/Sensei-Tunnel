@@ -1,12 +1,12 @@
-package com.follow.clash
+package com.sensei.tunnel
 
 import android.annotation.SuppressLint
 import android.os.Build
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
-import com.follow.clash.common.QuickAction
-import com.follow.clash.common.quickIntent
-import com.follow.clash.common.toPendingIntent
+import com.sensei.tunnel.common.QuickAction
+import com.sensei.tunnel.common.quickIntent
+import com.sensei.tunnel.common.toPendingIntent
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

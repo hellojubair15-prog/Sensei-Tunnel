@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:fl_clash/common/common.dart';
-import 'package:fl_clash/enum/enum.dart';
-import 'package:fl_clash/models/core.dart';
-import 'package:fl_clash/plugins/service.dart';
-import 'package:fl_clash/state.dart';
+import 'package:sensei_tunnel/common/common.dart';
+import 'package:sensei_tunnel/enum/enum.dart';
+import 'package:sensei_tunnel/models/core.dart';
+import 'package:sensei_tunnel/plugins/service.dart';
+import 'package:sensei_tunnel/state.dart';
 
 import 'interface.dart';
 

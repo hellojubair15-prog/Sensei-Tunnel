@@ -1,7 +1,7 @@
-package com.follow.clash.service.models
+package com.sensei.tunnel.service.models
 
 import android.os.Parcelable
-import com.follow.clash.common.AccessControlMode
+import com.sensei.tunnel.common.AccessControlMode
 import kotlinx.parcelize.Parcelize
 import java.net.InetAddress
 

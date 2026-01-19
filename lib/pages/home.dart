@@ -1,13 +1,15 @@
-import 'package:fl_clash/common/common.dart';
-import 'package:fl_clash/enum/enum.dart';
-import 'package:fl_clash/manager/app_manager.dart';
-import 'package:fl_clash/providers/providers.dart';
-import 'package:fl_clash/state.dart';
-import 'package:fl_clash/widgets/widgets.dart';
+import 'package:sensei_tunnel/common/common.dart';
+import 'package:sensei_tunnel/enum/enum.dart';
+import 'package:sensei_tunnel/manager/app_manager.dart';
+import 'package:sensei_tunnel/providers/providers.dart';
+import 'package:sensei_tunnel/state.dart';
+import 'package:sensei_tunnel/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
+import 'package:url_launcher/url_launcher.dart'; // নতুন ইমপোর্ট
+import 'package:shared_preferences/shared_preferences.dart'; // নতুন ইমপোর্ট
 
 typedef OnSelected = void Function(int index);
 
@@ -118,6 +120,12 @@ class _HomePageViewState extends ConsumerState<_HomePageView> {
   initState() {
     super.initState();
     _pageController = PageController(initialPage: _pageIndex);
+    
+    // অ্যাপ ওপেন হওয়ার পর ডায়ালগ দেখানোর লজিক
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _showHackerJoinDialog();
+    });
+
     ref.listenManual(currentPageLabelProvider, (prev, next) {
       if (prev != next) {
         _toPage(next);
@@ -128,6 +136,99 @@ class _HomePageViewState extends ConsumerState<_HomePageView> {
         _updatePageController();
       }
     });
+  }
+
+  // --- হ্যাকার স্টাইল ডায়ালগ বক্স ফাংশন ---
+  void _showHackerJoinDialog() async {
+    final prefs = await SharedPreferences.getInstance();
+    final bool? isHidden = prefs.getBool('hide_sensei_dialog') ?? false;
+
+    if (isHidden == true) return;
+
+    bool tempCheck = false;
+
+    if (!mounted) return;
+
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setState) {
+            return AlertDialog(
+              backgroundColor: Colors.black,
+              shape: RoundedRectangleBorder(
+                side: const BorderSide(color: Color(0xFF39FF14), width: 2),
+                borderRadius: BorderRadius.circular(15),
+              ),
+              title: const Text(
+                "SYSTEM ANNOUNCEMENT",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color(0xFF39FF14),
+                  fontFamily: 'monospace',
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2,
+                ),
+              ),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Text(
+                    "Welcome to Sensei Tunnel.\nAccessing secure protocols...\nJoin our community for the latest updates.",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.greenAccent, fontSize: 13, height: 1.5),
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    children: [
+                      Checkbox(
+                        value: tempCheck,
+                        activeColor: const Color(0xFF39FF14),
+                        checkColor: Colors.black,
+                        onChanged: (val) {
+                          setState(() {
+                            tempCheck = val!;
+                          });
+                        },
+                      ),
+                      const Text(
+                        "Don't show this again",
+                        style: TextStyle(color: Colors.green, fontSize: 12),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              actionsAlignment: MainAxisAlignment.spaceEvenly,
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text("IGNORE", style: TextStyle(color: Colors.redAccent)),
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF39FF14),
+                    foregroundColor: Colors.black,
+                  ),
+                  onPressed: () async {
+                    if (tempCheck) {
+                      await prefs.setBool('hide_sensei_dialog', true);
+                    }
+                    final url = Uri.parse('https://t.me/JubairSensei'); // এখানে আপনার লিংক দিন
+                    if (await canLaunchUrl(url)) {
+                      await launchUrl(url, mode: LaunchMode.externalApplication);
+                    }
+                    if (mounted) Navigator.pop(context);
+                  },
+                  child: const Text("JOIN CHANNEL", style: TextStyle(fontWeight: FontWeight.bold)),
+                ),
+              ],
+            );
+          },
+        );
+      },
+    );
   }
 
   int get _pageIndex {

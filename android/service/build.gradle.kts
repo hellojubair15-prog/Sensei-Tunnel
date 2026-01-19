@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.follow.clash.service"
+    namespace = "com.sensei.tunnel.service"
     compileSdk = 36
 
     defaultConfig {

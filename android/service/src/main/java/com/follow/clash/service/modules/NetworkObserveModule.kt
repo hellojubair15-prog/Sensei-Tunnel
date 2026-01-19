@@ -1,4 +1,4 @@
-package com.follow.clash.service.modules
+package com.sensei.tunnel.service.modules
 
 import android.app.Service
 import android.net.ConnectivityManager
@@ -10,7 +10,7 @@ import android.net.NetworkCapabilities.TRANSPORT_USB
 import android.net.NetworkRequest
 import android.os.Build
 import androidx.core.content.getSystemService
-import com.follow.clash.core.Core
+import com.sensei.tunnel.core.Core
 import java.net.Inet4Address
 import java.net.Inet6Address
 import java.net.InetAddress

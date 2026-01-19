@@ -2,10 +2,10 @@
 
 import 'dart:io';
 
-import 'package:fl_clash/common/color.dart';
-import 'package:fl_clash/common/system.dart';
-import 'package:fl_clash/views/dashboard/widgets/widgets.dart';
-import 'package:fl_clash/widgets/widgets.dart';
+import 'package:sensei_tunnel/common/color.dart';
+import 'package:sensei_tunnel/common/system.dart';
+import 'package:sensei_tunnel/views/dashboard/widgets/widgets.dart';
+import 'package:sensei_tunnel/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

@@ -1,7 +1,7 @@
 // ICallbackInterface.aidl
-package com.follow.clash.service;
+package com.sensei.tunnel.service;
 
-import com.follow.clash.service.IAckInterface;
+import com.sensei.tunnel.service.IAckInterface;
 
 interface ICallbackInterface {
     oneway void onResult(in byte[] data,in boolean isSuccess, in IAckInterface ack);

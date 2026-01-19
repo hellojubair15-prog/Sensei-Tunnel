@@ -1,9 +1,9 @@
-package com.follow.clash.service
+package com.sensei.tunnel.service
 
 import android.content.Intent
-import com.follow.clash.common.ServiceDelegate
-import com.follow.clash.service.models.NotificationParams
-import com.follow.clash.service.models.VpnOptions
+import com.sensei.tunnel.common.ServiceDelegate
+import com.sensei.tunnel.service.models.NotificationParams
+import com.sensei.tunnel.service.models.VpnOptions
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.sync.Mutex
 

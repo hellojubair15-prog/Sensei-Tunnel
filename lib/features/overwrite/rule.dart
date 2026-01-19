@@ -1,13 +1,13 @@
 library;
 
-import 'package:fl_clash/common/common.dart';
-import 'package:fl_clash/enum/enum.dart';
-import 'package:fl_clash/models/clash_config.dart';
-import 'package:fl_clash/state.dart';
-import 'package:fl_clash/widgets/card.dart';
-import 'package:fl_clash/widgets/dialog.dart';
-import 'package:fl_clash/widgets/input.dart';
-import 'package:fl_clash/widgets/list.dart';
+import 'package:sensei_tunnel/common/common.dart';
+import 'package:sensei_tunnel/enum/enum.dart';
+import 'package:sensei_tunnel/models/clash_config.dart';
+import 'package:sensei_tunnel/state.dart';
+import 'package:sensei_tunnel/widgets/card.dart';
+import 'package:sensei_tunnel/widgets/dialog.dart';
+import 'package:sensei_tunnel/widgets/input.dart';
+import 'package:sensei_tunnel/widgets/list.dart';
 import 'package:flutter/material.dart';
 
 class RuleItem extends StatelessWidget {

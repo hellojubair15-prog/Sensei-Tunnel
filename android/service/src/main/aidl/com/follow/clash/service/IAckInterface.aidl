@@ -1,7 +1,7 @@
 // IAckInterface.aidl
-package com.follow.clash.service;
+package com.sensei.tunnel.service;
 
-import com.follow.clash.service.IAckInterface;
+import com.sensei.tunnel.service.IAckInterface;
 
 interface IAckInterface {
    oneway void onAck();

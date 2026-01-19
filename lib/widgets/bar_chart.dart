@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'dart:ui';
 
-import 'package:fl_clash/common/constant.dart';
+import 'package:sensei_tunnel/common/constant.dart';
 import 'package:flutter/material.dart';
 
 @immutable

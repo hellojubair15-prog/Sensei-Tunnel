@@ -1,4 +1,4 @@
-package com.follow.clash.common
+package com.sensei.tunnel.common
 
 import android.annotation.SuppressLint
 import android.app.ActivityManager

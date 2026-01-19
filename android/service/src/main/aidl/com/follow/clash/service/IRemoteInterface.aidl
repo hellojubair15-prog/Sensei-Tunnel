@@ -1,11 +1,11 @@
 // IRemoteInterface.aidl
-package com.follow.clash.service;
+package com.sensei.tunnel.service;
 
-import com.follow.clash.service.ICallbackInterface;
-import com.follow.clash.service.IEventInterface;
-import com.follow.clash.service.IResultInterface;
-import com.follow.clash.service.models.VpnOptions;
-import com.follow.clash.service.models.NotificationParams;
+import com.sensei.tunnel.service.ICallbackInterface;
+import com.sensei.tunnel.service.IEventInterface;
+import com.sensei.tunnel.service.IResultInterface;
+import com.sensei.tunnel.service.models.VpnOptions;
+import com.sensei.tunnel.service.models.NotificationParams;
 
 interface IRemoteInterface {
     void invokeAction(in String data, in ICallbackInterface callback);

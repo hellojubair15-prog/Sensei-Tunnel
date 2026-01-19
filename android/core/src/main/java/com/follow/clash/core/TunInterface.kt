@@ -1,4 +1,4 @@
-package com.follow.clash.core
+package com.sensei.tunnel.core
 
 import androidx.annotation.Keep
 

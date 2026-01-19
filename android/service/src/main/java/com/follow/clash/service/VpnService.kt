@@ -1,4 +1,4 @@
-package com.follow.clash.service
+package com.sensei.tunnel.service
 
 import android.content.Intent
 import android.net.ConnectivityManager
@@ -10,17 +10,17 @@ import android.os.Parcel
 import android.os.RemoteException
 import android.util.Log
 import androidx.core.content.getSystemService
-import com.follow.clash.common.AccessControlMode
-import com.follow.clash.common.GlobalState
-import com.follow.clash.core.Core
-import com.follow.clash.service.models.VpnOptions
-import com.follow.clash.service.models.getIpv4RouteAddress
-import com.follow.clash.service.models.getIpv6RouteAddress
-import com.follow.clash.service.models.toCIDR
-import com.follow.clash.service.modules.NetworkObserveModule
-import com.follow.clash.service.modules.NotificationModule
-import com.follow.clash.service.modules.SuspendModule
-import com.follow.clash.service.modules.moduleLoader
+import com.sensei.tunnel.common.AccessControlMode
+import com.sensei.tunnel.common.GlobalState
+import com.sensei.tunnel.core.Core
+import com.sensei.tunnel.service.models.VpnOptions
+import com.sensei.tunnel.service.models.getIpv4RouteAddress
+import com.sensei.tunnel.service.models.getIpv6RouteAddress
+import com.sensei.tunnel.service.models.toCIDR
+import com.sensei.tunnel.service.modules.NetworkObserveModule
+import com.sensei.tunnel.service.modules.NotificationModule
+import com.sensei.tunnel.service.modules.SuspendModule
+import com.sensei.tunnel.service.modules.moduleLoader
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import java.net.InetSocketAddress
@@ -204,7 +204,7 @@ class VpnService : SystemVpnService(), IBaseService,
                     }
                 }
             }
-            setSession("FlClash")
+            setSession("Sensei Tunnel")
             setBlocking(false)
             if (Build.VERSION.SDK_INT >= 29) {
                 setMetered(false)

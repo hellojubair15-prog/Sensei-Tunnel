@@ -1,7 +1,7 @@
-import 'package:fl_clash/common/common.dart';
-import 'package:fl_clash/pages/scan.dart';
-import 'package:fl_clash/state.dart';
-import 'package:fl_clash/widgets/widgets.dart';
+import 'package:sensei_tunnel/common/common.dart';
+import 'package:sensei_tunnel/pages/scan.dart';
+import 'package:sensei_tunnel/state.dart';
+import 'package:sensei_tunnel/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class AddProfileView extends StatelessWidget {

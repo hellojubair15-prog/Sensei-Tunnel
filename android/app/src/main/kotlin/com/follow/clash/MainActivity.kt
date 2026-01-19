@@ -1,11 +1,11 @@
-package com.follow.clash
+package com.sensei.tunnel
 
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
-import com.follow.clash.common.GlobalState
-import com.follow.clash.plugins.AppPlugin
-import com.follow.clash.plugins.ServicePlugin
-import com.follow.clash.plugins.TilePlugin
+import com.sensei.tunnel.common.GlobalState
+import com.sensei.tunnel.plugins.AppPlugin
+import com.sensei.tunnel.plugins.ServicePlugin
+import com.sensei.tunnel.plugins.TilePlugin
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import kotlinx.coroutines.CoroutineScope

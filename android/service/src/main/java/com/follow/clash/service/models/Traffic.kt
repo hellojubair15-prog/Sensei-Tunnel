@@ -1,8 +1,8 @@
-package com.follow.clash.service.models
+package com.sensei.tunnel.service.models
 
-import com.follow.clash.common.GlobalState
-import com.follow.clash.common.formatBytes
-import com.follow.clash.core.Core
+import com.sensei.tunnel.common.GlobalState
+import com.sensei.tunnel.common.formatBytes
+import com.sensei.tunnel.core.Core
 import com.google.gson.Gson
 
 data class Traffic(

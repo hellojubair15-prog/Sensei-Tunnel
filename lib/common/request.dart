@@ -5,9 +5,9 @@ import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
-import 'package:fl_clash/common/common.dart';
-import 'package:fl_clash/models/models.dart';
-import 'package:fl_clash/state.dart';
+import 'package:sensei_tunnel/common/common.dart';
+import 'package:sensei_tunnel/models/models.dart';
+import 'package:sensei_tunnel/state.dart';
 import 'package:flutter/cupertino.dart';
 
 class Request {
@@ -23,7 +23,7 @@ class Request {
         final client = HttpClient();
         client.findProxy = (Uri uri) {
           client.userAgent = globalState.ua;
-          return FlClashHttpOverrides.handleFindProxy(uri);
+          return Sensei TunnelHttpOverrides.handleFindProxy(uri);
         };
         return client;
       },

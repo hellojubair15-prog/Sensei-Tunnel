@@ -1,4 +1,4 @@
-package com.follow.clash
+package com.sensei.tunnel
 
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -7,7 +7,7 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import androidx.core.graphics.drawable.toBitmap
-import com.follow.clash.common.GlobalState
+import com.sensei.tunnel.common.GlobalState
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodChannel

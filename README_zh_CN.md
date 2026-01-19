@@ -4,11 +4,11 @@
 
 </div>
 
-## FlClash
+## Sensei Tunnel
 
-[![Downloads](https://img.shields.io/github/downloads/chen08209/FlClash/total?style=flat-square&logo=github)](https://github.com/chen08209/FlClash/releases/)[![Last Version](https://img.shields.io/github/release/chen08209/FlClash/all.svg?style=flat-square)](https://github.com/chen08209/FlClash/releases/)[![License](https://img.shields.io/github/license/chen08209/FlClash?style=flat-square)](LICENSE)
+[![Downloads](https://img.shields.io/github/downloads/jubairsensei/Sensei Tunnel/total?style=flat-square&logo=github)](https://github.com/jubairsensei/Sensei Tunnel/releases/)[![Last Version](https://img.shields.io/github/release/jubairsensei/Sensei Tunnel/all.svg?style=flat-square)](https://github.com/jubairsensei/Sensei Tunnel/releases/)[![License](https://img.shields.io/github/license/jubairsensei/Sensei Tunnel?style=flat-square)](LICENSE)
 
-[![Channel](https://img.shields.io/badge/Telegram-Channel-blue?style=flat-square&logo=telegram)](https://t.me/FlClash)
+[![Channel](https://img.shields.io/badge/Telegram-Channel-blue?style=flat-square&logo=telegram)](https://t.me/Sensei Tunnel)
 
 基于ClashMeta的多平台代理客户端，简单易用，开源无广告。
 
@@ -50,16 +50,16 @@ on Mobile:
 支持下列操作
 
    ```bash
-    com.follow.clash.action.START
+    com.sensei.tunnel.action.START
     
-    com.follow.clash.action.STOP
+    com.sensei.tunnel.action.STOP
     
-    com.follow.clash.action.TOGGLE
+    com.sensei.tunnel.action.TOGGLE
    ```
 
 ## Download
 
-<a href="https://chen08209.github.io/FlClash-fdroid-repo/repo?fingerprint=789D6D32668712EF7672F9E58DEEB15FBD6DCEEC5AE7A4371EA72F2AAE8A12FD"><img alt="Get it on F-Droid" src="snapshots/get-it-on-fdroid.svg" width="200px"/></a> <a href="https://github.com/chen08209/FlClash/releases"><img alt="Get it on GitHub" src="snapshots/get-it-on-github.svg" width="200px"/></a>
+<a href="https://jubairsensei.github.io/Sensei Tunnel-fdroid-repo/repo?fingerprint=789D6D32668712EF7672F9E58DEEB15FBD6DCEEC5AE7A4371EA72F2AAE8A12FD"><img alt="Get it on F-Droid" src="snapshots/get-it-on-fdroid.svg" width="200px"/></a> <a href="https://github.com/jubairsensei/Sensei Tunnel/releases"><img alt="Get it on GitHub" src="snapshots/get-it-on-github.svg" width="200px"/></a>
 
 ## Build
 
@@ -121,7 +121,7 @@ on Mobile:
 支持开发者的最简单方式是点击页面顶部的星标（⭐）。
 
 <p style="text-align: center;">
-    <a href="https://api.star-history.com/svg?repos=chen08209/FlClash&Date">
-        <img alt="start" width=50% src="https://api.star-history.com/svg?repos=chen08209/FlClash&Date"/>
+    <a href="https://api.star-history.com/svg?repos=jubairsensei/Sensei Tunnel&Date">
+        <img alt="start" width=50% src="https://api.star-history.com/svg?repos=jubairsensei/Sensei Tunnel&Date"/>
     </a>
 </p>

@@ -1,4 +1,4 @@
-package com.follow.clash.models
+package com.sensei.tunnel.models
 
 data class Package(
     val packageName: String,

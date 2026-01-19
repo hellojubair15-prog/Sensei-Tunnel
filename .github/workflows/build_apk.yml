@@ -1,0 +1,38 @@
+name: Build Sensei Tunnel APK
+
+on:
+  push:
+    branches:
+      - main  # আপনার মেইন ব্রাঞ্চের নাম main হলে এটি রাখুন
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.0' # আপনি চাইলে আপনার পছন্দমতো ভার্সন দিতে পারেন
+          channel: 'stable'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build APK
+        run: flutter build apk --release --target-platform android-arm,android-arm64,android-x64 --split-per-abi
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: sensei-tunnel-apks
+          path: build/app/outputs/flutter-apk/*.apk

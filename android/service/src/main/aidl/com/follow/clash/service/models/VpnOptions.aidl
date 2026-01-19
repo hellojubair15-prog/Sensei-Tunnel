@@ -1,6 +1,6 @@
 //VpnOptions.aidl
-package com.follow.clash.service.models;
+package com.sensei.tunnel.service.models;
 
-import com.follow.clash.service.models.AccessControl;
+import com.sensei.tunnel.service.models.AccessControl;
 
 parcelable VpnOptions;

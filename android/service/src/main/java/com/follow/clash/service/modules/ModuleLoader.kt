@@ -1,4 +1,4 @@
-package com.follow.clash.service.modules
+package com.sensei.tunnel.service.modules
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

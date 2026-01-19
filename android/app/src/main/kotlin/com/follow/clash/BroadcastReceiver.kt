@@ -1,11 +1,11 @@
-package com.follow.clash
+package com.sensei.tunnel
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.follow.clash.common.BroadcastAction
-import com.follow.clash.common.GlobalState
-import com.follow.clash.common.action
+import com.sensei.tunnel.common.BroadcastAction
+import com.sensei.tunnel.common.GlobalState
+import com.sensei.tunnel.common.action
 import kotlinx.coroutines.launch
 
 class BroadcastReceiver : BroadcastReceiver() {

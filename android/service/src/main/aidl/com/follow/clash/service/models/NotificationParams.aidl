@@ -1,4 +1,4 @@
 //NotificationParams.aidl
-package com.follow.clash.service.models;
+package com.sensei.tunnel.service.models;
 
 parcelable NotificationParams;

@@ -1,13 +1,13 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:fl_clash/common/common.dart';
-import 'package:fl_clash/enum/enum.dart';
-import 'package:fl_clash/features/features.dart';
-import 'package:fl_clash/models/models.dart';
-import 'package:fl_clash/providers/providers.dart';
-import 'package:fl_clash/state.dart';
-import 'package:fl_clash/views/config/scripts.dart';
-import 'package:fl_clash/widgets/widgets.dart';
+import 'package:sensei_tunnel/common/common.dart';
+import 'package:sensei_tunnel/enum/enum.dart';
+import 'package:sensei_tunnel/features/features.dart';
+import 'package:sensei_tunnel/models/models.dart';
+import 'package:sensei_tunnel/providers/providers.dart';
+import 'package:sensei_tunnel/state.dart';
+import 'package:sensei_tunnel/views/config/scripts.dart';
+import 'package:sensei_tunnel/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

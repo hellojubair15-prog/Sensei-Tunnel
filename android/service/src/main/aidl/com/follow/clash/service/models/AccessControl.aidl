@@ -1,4 +1,4 @@
 //AccessControl.aidl
-package com.follow.clash.service.models;
+package com.sensei.tunnel.service.models;
 
 parcelable AccessControl;

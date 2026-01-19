@@ -1,8 +1,8 @@
-package com.follow.clash
+package com.sensei.tunnel
 
 import android.app.Application
 import android.content.Context
-import com.follow.clash.common.GlobalState
+import com.sensei.tunnel.common.GlobalState
 
 class Application : Application() {
 

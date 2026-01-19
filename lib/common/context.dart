@@ -1,7 +1,7 @@
-import 'package:fl_clash/l10n/l10n.dart';
-import 'package:fl_clash/manager/manager.dart';
-import 'package:fl_clash/models/widget.dart';
-import 'package:fl_clash/widgets/scaffold.dart';
+import 'package:sensei_tunnel/l10n/l10n.dart';
+import 'package:sensei_tunnel/manager/manager.dart';
+import 'package:sensei_tunnel/models/widget.dart';
+import 'package:sensei_tunnel/widgets/scaffold.dart';
 import 'package:flutter/material.dart';
 
 extension BuildContextExtension on BuildContext {

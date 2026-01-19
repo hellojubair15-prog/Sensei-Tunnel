@@ -1,16 +1,16 @@
 import 'dart:io';
 
-import 'package:fl_clash/common/common.dart';
-import 'package:fl_clash/l10n/l10n.dart';
-import 'package:fl_clash/models/models.dart';
-import 'package:fl_clash/providers/providers.dart';
-import 'package:fl_clash/state.dart';
-import 'package:fl_clash/views/about.dart';
-import 'package:fl_clash/views/access.dart';
-import 'package:fl_clash/views/application_setting.dart';
-import 'package:fl_clash/views/config/config.dart';
-import 'package:fl_clash/views/hotkey.dart';
-import 'package:fl_clash/widgets/widgets.dart';
+import 'package:sensei_tunnel/common/common.dart';
+import 'package:sensei_tunnel/l10n/l10n.dart';
+import 'package:sensei_tunnel/models/models.dart';
+import 'package:sensei_tunnel/providers/providers.dart';
+import 'package:sensei_tunnel/state.dart';
+import 'package:sensei_tunnel/views/about.dart';
+import 'package:sensei_tunnel/views/access.dart';
+import 'package:sensei_tunnel/views/application_setting.dart';
+import 'package:sensei_tunnel/views/config/config.dart';
+import 'package:sensei_tunnel/views/hotkey.dart';
+import 'package:sensei_tunnel/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';

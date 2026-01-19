@@ -1,4 +1,4 @@
-package com.follow.clash.service.modules
+package com.sensei.tunnel.service.modules
 
 abstract class Module {
 

@@ -1,5 +1,5 @@
 // IResultInterface.aidl
-package com.follow.clash.service;
+package com.sensei.tunnel.service;
 
 interface IResultInterface {
     oneway void onResult(in long runTime);

@@ -1,4 +1,4 @@
-package com.follow.clash.common
+package com.sensei.tunnel.common
 
 import android.content.Intent
 import android.os.IBinder

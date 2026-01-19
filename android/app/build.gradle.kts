@@ -25,11 +25,9 @@ val isRelease =
 
 
 android {
-    namespace = "com.follow.clash"
-    compileSdk = libs.versions.compileSdk.get().toInt()
+    namespace = "com.sensei.tunnel"
+    compileSdk = 34 // সরাসরি লেটেস্ট ভার্সন সেট করা হলো
     ndkVersion = libs.versions.ndkVersion.get()
-
-
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -37,11 +35,16 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.follow.clash"
-        minSdk = flutter.minSdkVersion
-        targetSdk = libs.versions.targetSdk.get().toInt()
+        applicationId = "com.sensei.tunnel"
+        minSdk = 21 // অ্যান্ড্রয়েড ৫.০ থেকে সব ফোনে সাপোর্ট করবে
+        targetSdk = 34 // অ্যান্ড্রয়েড ১৪ এর জন্য অপ্টিমাইজড
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+
+        // শুধুমাত্র মোবাইল আর্কিটেকচারগুলো রাখা হয়েছে
+        ndk {
+            abiFilters.addAll(listOf("armeabi-v7a", "arm64-v8a", "x86_64"))
+        }
     }
 
     signingConfigs {
@@ -59,6 +62,11 @@ android {
         jniLibs {
             useLegacyPackaging = true
         }
+        // অপ্রয়োজনীয় ফাইল বাদ দিয়ে APK সাইজ কমানো
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "**/LICENSE.txt"
+        }
     }
 
     buildTypes {
@@ -68,8 +76,8 @@ android {
         }
 
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
+            isMinifyEnabled = true // কোড অপ্টিমাইজ করবে
+            isShrinkResources = true // অপ্রয়োজনীয় ছবি/ফাইল বাদ দেবে
             signingConfig = if (isRelease) {
                 signingConfigs.getByName("release")
             } else {
@@ -92,7 +100,6 @@ kotlin {
 flutter {
     source = "../.."
 }
-
 
 dependencies {
     implementation(project(":service"))

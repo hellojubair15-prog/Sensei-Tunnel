@@ -1,14 +1,14 @@
 import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:fl_clash/common/common.dart';
-import 'package:fl_clash/core/core.dart';
-import 'package:fl_clash/l10n/l10n.dart';
-import 'package:fl_clash/manager/hotkey_manager.dart';
-import 'package:fl_clash/manager/manager.dart';
-import 'package:fl_clash/plugins/app.dart';
-import 'package:fl_clash/providers/providers.dart';
-import 'package:fl_clash/state.dart';
+import 'package:sensei_tunnel/common/common.dart';
+import 'package:sensei_tunnel/core/core.dart';
+import 'package:sensei_tunnel/l10n/l10n.dart';
+import 'package:sensei_tunnel/manager/hotkey_manager.dart';
+import 'package:sensei_tunnel/manager/manager.dart';
+import 'package:sensei_tunnel/plugins/app.dart';
+import 'package:sensei_tunnel/providers/providers.dart';
+import 'package:sensei_tunnel/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

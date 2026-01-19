@@ -1,4 +1,4 @@
-package com.follow.clash.plugins
+package com.sensei.tunnel.plugins
 
 import android.Manifest
 import android.app.Activity
@@ -17,13 +17,13 @@ import androidx.core.content.pm.ShortcutInfoCompat
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
 import com.android.tools.smali.dexlib2.dexbacked.DexBackedDexFile
-import com.follow.clash.R
-import com.follow.clash.common.Components
-import com.follow.clash.common.GlobalState
-import com.follow.clash.common.QuickAction
-import com.follow.clash.common.quickIntent
-import com.follow.clash.getPackageIconPath
-import com.follow.clash.models.Package
+import com.sensei.tunnel.R
+import com.sensei.tunnel.common.Components
+import com.sensei.tunnel.common.GlobalState
+import com.sensei.tunnel.common.QuickAction
+import com.sensei.tunnel.common.quickIntent
+import com.sensei.tunnel.getPackageIconPath
+import com.sensei.tunnel.models.Package
 import com.google.gson.Gson
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.plugins.FlutterPlugin

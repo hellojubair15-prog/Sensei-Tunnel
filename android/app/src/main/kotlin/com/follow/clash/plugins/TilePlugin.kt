@@ -1,7 +1,7 @@
-package com.follow.clash.plugins
+package com.sensei.tunnel.plugins
 
-import com.follow.clash.common.Components
-import com.follow.clash.invokeMethodOnMainThread
+import com.sensei.tunnel.common.Components
+import com.sensei.tunnel.invokeMethodOnMainThread
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel

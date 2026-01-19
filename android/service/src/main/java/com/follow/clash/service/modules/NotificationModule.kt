@@ -1,4 +1,4 @@
-package com.follow.clash.service.modules
+package com.sensei.tunnel.service.modules
 
 import android.app.Notification.FOREGROUND_SERVICE_IMMEDIATE
 import android.app.Service
@@ -8,19 +8,19 @@ import android.os.Build
 import android.os.PowerManager
 import androidx.core.app.NotificationCompat
 import androidx.core.content.getSystemService
-import com.follow.clash.common.Components
-import com.follow.clash.common.GlobalState
-import com.follow.clash.common.QuickAction
-import com.follow.clash.common.quickIntent
-import com.follow.clash.common.receiveBroadcastFlow
-import com.follow.clash.common.startForeground
-import com.follow.clash.common.tickerFlow
-import com.follow.clash.common.toPendingIntent
-import com.follow.clash.core.Core
-import com.follow.clash.service.R
-import com.follow.clash.service.State
-import com.follow.clash.service.models.NotificationParams
-import com.follow.clash.service.models.getSpeedTrafficText
+import com.sensei.tunnel.common.Components
+import com.sensei.tunnel.common.GlobalState
+import com.sensei.tunnel.common.QuickAction
+import com.sensei.tunnel.common.quickIntent
+import com.sensei.tunnel.common.receiveBroadcastFlow
+import com.sensei.tunnel.common.startForeground
+import com.sensei.tunnel.common.tickerFlow
+import com.sensei.tunnel.common.toPendingIntent
+import com.sensei.tunnel.core.Core
+import com.sensei.tunnel.service.R
+import com.sensei.tunnel.service.State
+import com.sensei.tunnel.service.models.NotificationParams
+import com.sensei.tunnel.service.models.getSpeedTrafficText
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
@@ -91,7 +91,7 @@ class NotificationModule(private val service: Service) : Module() {
             )
         ) {
             setSmallIcon(R.drawable.ic)
-            setContentTitle("FlClash")
+            setContentTitle("Sensei Tunnel")
             setContentIntent(intent.toPendingIntent)
             setPriority(NotificationCompat.PRIORITY_HIGH)
             setCategory(NotificationCompat.CATEGORY_SERVICE)

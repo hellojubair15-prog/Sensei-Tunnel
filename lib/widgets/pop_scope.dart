@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:fl_clash/state.dart';
+import 'package:sensei_tunnel/state.dart';
 import 'package:flutter/widgets.dart';
 
 class CommonPopScope extends StatelessWidget {
