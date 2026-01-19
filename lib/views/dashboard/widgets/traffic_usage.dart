@@ -59,7 +59,7 @@ class TrafficUsage extends StatelessWidget {
         ),
         onPressed: () {},
         child: Consumer(
-          builder: (_, ref, _) {
+          builder: (_, ref, __) {
             final totalTraffic = ref.watch(totalTrafficProvider);
             final upTotalTrafficValue = totalTraffic.up;
             final downTotalTrafficValue = totalTraffic.down;

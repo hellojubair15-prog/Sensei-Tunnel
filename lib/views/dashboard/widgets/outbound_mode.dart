@@ -16,7 +16,7 @@ class OutboundMode extends StatelessWidget {
     return SizedBox(
       height: height,
       child: Consumer(
-        builder: (_, ref, _) {
+        builder: (_, ref, __) {
           final mode = ref.watch(
             patchClashConfigProvider.select((state) => state.mode),
           );
@@ -99,7 +99,7 @@ class OutboundModeV2 extends StatelessWidget {
       child: CommonCard(
         padding: EdgeInsets.zero,
         child: Consumer(
-          builder: (_, ref, _) {
+          builder: (_, ref, __) {
             final mode = ref.watch(
               patchClashConfigProvider.select((state) => state.mode),
             );

@@ -289,7 +289,7 @@ class ApplicationSettingView extends StatelessWidget {
           final item = items[index];
           return item;
         },
-        separatorBuilder: (_, _) {
+        separatorBuilder: (_, __) {
           return const Divider(height: 0);
         },
         itemCount: items.length,

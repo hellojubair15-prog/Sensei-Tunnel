@@ -142,7 +142,7 @@ class _ThemeModeItem extends ConsumerWidget {
                 ),
               );
             },
-            separatorBuilder: (_, _) {
+            separatorBuilder: (_, __) {
               return const SizedBox(width: 16);
             },
           ),
@@ -564,7 +564,7 @@ class _PaletteDialogState extends State<_PaletteDialog> {
           SizedBox(height: 24),
           ValueListenableBuilder(
             valueListenable: _controller,
-            builder: (_, color, _) {
+            builder: (_, color, __) {
               return PrimaryColorBox(
                 primaryColor: color,
                 child: FilledButton(

@@ -91,7 +91,7 @@ class _LineChartState extends State<LineChart>
       builder: (_, container) {
         return AnimatedBuilder(
           animation: _controller.view,
-          builder: (_, _) {
+          builder: (_, __) {
             return CustomPaint(
               painter: LineChartPainter(
                 prevRenderPoints: _prevRenderPoints,

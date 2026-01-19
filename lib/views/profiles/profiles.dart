@@ -109,7 +109,7 @@ class _ProfilesViewState extends State<ProfilesView> {
   @override
   Widget build(BuildContext context) {
     return Consumer(
-      builder: (_, ref, _) {
+      builder: (_, ref, __) {
         final profilesSelectorState = ref.watch(profilesSelectorStateProvider);
         final spacing = 14.ap;
         return CommonScaffold(

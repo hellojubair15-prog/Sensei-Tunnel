@@ -524,7 +524,7 @@ class _AccessControlPanelState extends ConsumerState<AccessControlPanel> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           scrollDirection: Axis.horizontal,
           child: Consumer(
-            builder: (_, ref, _) {
+            builder: (_, ref, __) {
               final accessControlMode = ref.watch(
                 accessControlStateProvider.select((state) => state.mode),
               );
@@ -561,7 +561,7 @@ class _AccessControlPanelState extends ConsumerState<AccessControlPanel> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           scrollDirection: Axis.horizontal,
           child: Consumer(
-            builder: (_, ref, _) {
+            builder: (_, ref, __) {
               final accessSortType = ref.watch(
                 accessControlStateProvider.select((state) => state.sort),
               );
@@ -598,7 +598,7 @@ class _AccessControlPanelState extends ConsumerState<AccessControlPanel> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           scrollDirection: Axis.horizontal,
           child: Consumer(
-            builder: (_, ref, _) {
+            builder: (_, ref, __) {
               final vm2 = ref.watch(
                 accessControlStateProvider.select(
                   (state) => VM2(

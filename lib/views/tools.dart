@@ -90,7 +90,7 @@ class _ToolViewState extends ConsumerState<ToolsView> {
     );
     final items = [
       Consumer(
-        builder: (_, ref, _) {
+        builder: (_, ref, __) {
           final state = ref.watch(moreToolsSelectorStateProvider);
           if (state.navigationItems.isEmpty) {
             return Container();

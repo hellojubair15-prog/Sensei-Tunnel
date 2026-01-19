@@ -320,7 +320,7 @@ class __StandardContentState extends ConsumerState<_StandardContent> {
           ),
           SliverToBoxAdapter(child: SizedBox(height: 8)),
           Consumer(
-            builder: (_, ref, _) {
+            builder: (_, ref, __) {
               return SliverReorderableList(
                 itemCount: addedRules.length,
                 itemBuilder: (_, index) {
@@ -440,7 +440,7 @@ class _ScriptContent extends ConsumerWidget {
         ),
         SliverToBoxAdapter(child: SizedBox(height: 8)),
         Consumer(
-          builder: (_, ref, _) {
+          builder: (_, ref, __) {
             return SliverPadding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               sliver: SliverList.builder(

@@ -103,7 +103,7 @@ class _GeoDataListItemState extends State<GeoDataListItem> {
 
   Widget _buildSubtitle() {
     return Consumer(
-      builder: (_, ref, _) {
+      builder: (_, ref, __) {
         final url = ref.watch(
           patchClashConfigProvider.select(
             (state) => state.geoXUrl.toJson()[geoItem.key],

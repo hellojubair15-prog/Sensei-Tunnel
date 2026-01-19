@@ -285,7 +285,7 @@ class _ProxiesListViewState extends State<ProxiesListView> {
   @override
   Widget build(BuildContext context) {
     return Consumer(
-      builder: (_, ref, _) {
+      builder: (_, ref, __) {
         final state = ref.watch(proxiesListStateProvider);
         ref.watch(themeSettingProvider.select((state) => state.textScale));
         if (state.groups.isEmpty) {
@@ -508,7 +508,7 @@ class _ListHeaderState extends State<ListHeader> {
                               Flexible(
                                 flex: 1,
                                 child: Consumer(
-                                  builder: (_, ref, _) {
+                                  builder: (_, ref, __) {
                                     final proxyName = ref
                                         .watch(
                                           getSelectedProxyNameProvider(

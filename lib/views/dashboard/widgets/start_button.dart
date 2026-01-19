@@ -118,7 +118,7 @@ class _StartButtonState extends ConsumerState<StartButton>
           );
         },
         child: Consumer(
-          builder: (_, ref, _) {
+          builder: (_, ref, __) {
             final runTime = ref.watch(runTimeProvider);
             final text = utils.getTimeText(runTime);
             return Text(

@@ -67,7 +67,7 @@ class ProxiesTabViewState extends ConsumerState<ProxiesTabView>
 
   Widget _buildMoreButton() {
     return Consumer(
-      builder: (_, ref, _) {
+      builder: (_, ref, __) {
         final isMobileView = ref.watch(isMobileViewProvider);
         return IconButton(
           onPressed: _showMoreMenu,
@@ -89,7 +89,7 @@ class ProxiesTabViewState extends ConsumerState<ProxiesTabView>
           body: SingleChildScrollView(
             padding: const EdgeInsets.all(16),
             child: Consumer(
-              builder: (_, ref, _) {
+              builder: (_, ref, __) {
                 final state = ref.watch(proxiesTabControllerStateProvider);
                 final groupNames = state.a;
                 final currentGroupName = state.b;

@@ -40,7 +40,7 @@ class AdvancedConfigView extends StatelessWidget {
             title: 'DNS',
             actions: [
               Consumer(
-                builder: (_, ref, _) {
+                builder: (_, ref, __) {
                   return IconButton(
                     onPressed: () async {
                       final res = await globalState.showMessage(

@@ -60,7 +60,7 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
     return [
       if (!isEdit)
         Consumer(
-          builder: (_, ref, _) {
+          builder: (_, ref, __) {
             final coreStatus = ref.watch(coreStatusProvider);
             return Tooltip(
               message: appLocalizations.coreStatus,
