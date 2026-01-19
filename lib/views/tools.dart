@@ -29,12 +29,15 @@ class ToolsView extends ConsumerStatefulWidget {
 
 class _ToolViewState extends ConsumerState<ToolsView> {
   Widget _buildNavigationMenuItem(NavigationItem navigationItem) {
-    const SizedBox(),
+    return ListItem(
       leading: navigationItem.icon,
       title: Text(Intl.message(navigationItem.label.name)),
       subtitle: navigationItem.description != null
           ? Text(Intl.message(navigationItem.description!))
           : null,
+      onTap: () {
+        // Custom navigation logic if needed, empty for now to prevent crash
+      },
     );
   }
 
@@ -55,9 +58,9 @@ class _ToolViewState extends ConsumerState<ToolsView> {
     return generateSection(
       title: context.appLocalizations.other,
       items: [
-        _DisclaimerItem(),
-        if (enableDeveloperMode) _DeveloperItem(),
-        _InfoItem(),
+        const _DisclaimerItem(),
+        if (enableDeveloperMode) const _DeveloperItem(),
+        const _InfoItem(),
       ],
     );
   }
@@ -69,7 +72,7 @@ class _ToolViewState extends ConsumerState<ToolsView> {
         const _LocaleItem(),
         const _ThemeItem(),
         const _BackupItem(),
-        if (system.isDesktop) const _HotkeyItem(),
+        // Desktop items removed/hidden
         if (system.isWindows) const _LoopbackItem(),
         if (system.isAndroid) const _AccessItem(),
         const _ConfigItem(),
@@ -157,10 +160,15 @@ class _ThemeItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const SizedBox(),
+    return ListItem(
       leading: const Icon(Icons.style),
       title: Text(context.appLocalizations.theme),
       subtitle: Text(context.appLocalizations.themeDesc),
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => const ThemeView()),
+        );
+      },
     );
   }
 }
@@ -170,10 +178,15 @@ class _BackupItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const SizedBox(),
+    return ListItem(
       leading: const Icon(Icons.cloud_sync),
       title: Text(context.appLocalizations.backupAndRecovery),
       subtitle: Text(context.appLocalizations.backupAndRecoveryDesc),
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => const BackupAndRecoveryView()),
+        );
+      },
     );
   }
 }
@@ -183,11 +196,8 @@ class _HotkeyItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const SizedBox(),
-      leading: const Icon(Icons.keyboard),
-      title: Text(context.appLocalizations.hotkeyManagement),
-      subtitle: Text(context.appLocalizations.hotkeyManagementDesc),
-    );
+    // Desktop feature disabled for mobile build
+    return const SizedBox();
   }
 }
 
@@ -201,10 +211,12 @@ class _LoopbackItem extends StatelessWidget {
       title: Text(context.appLocalizations.loopback),
       subtitle: Text(context.appLocalizations.loopbackDesc),
       onTap: () {
-        windows?.runas(
-          '"${join(dirname(Platform.resolvedExecutable), "EnableLoopback.exe")}"',
-          '',
-        );
+        if (Platform.isWindows) {
+            windows?.runas(
+            '"${join(dirname(Platform.resolvedExecutable), "EnableLoopback.exe")}"',
+            '',
+            );
+        }
       },
     );
   }
@@ -215,10 +227,15 @@ class _AccessItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const SizedBox(),
+    return ListItem(
       leading: const Icon(Icons.view_list),
       title: Text(context.appLocalizations.accessControl),
       subtitle: Text(context.appLocalizations.accessControlDesc),
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => const AccessView()),
+        );
+      },
     );
   }
 }
@@ -228,10 +245,15 @@ class _ConfigItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const SizedBox(),
+    return ListItem(
       leading: const Icon(Icons.edit),
       title: Text(context.appLocalizations.basicConfig),
       subtitle: Text(context.appLocalizations.basicConfigDesc),
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => const ConfigView()),
+        );
+      },
     );
   }
 }
@@ -241,10 +263,15 @@ class _AdvancedConfigItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const SizedBox(),
+    return ListItem(
       leading: const Icon(Icons.build),
       title: Text(context.appLocalizations.advancedConfig),
       subtitle: Text(context.appLocalizations.advancedConfigDesc),
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => const AdvancedConfigView()),
+        );
+      },
     );
   }
 }
@@ -254,10 +281,15 @@ class _SettingItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const SizedBox(),
+    return ListItem(
       leading: const Icon(Icons.settings),
       title: Text(context.appLocalizations.application),
       subtitle: Text(context.appLocalizations.applicationDesc),
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => const ApplicationSettingView()),
+        );
+      },
     );
   }
 }
@@ -286,9 +318,14 @@ class _InfoItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const SizedBox(),
+    return ListItem(
       leading: const Icon(Icons.info),
       title: Text(context.appLocalizations.about),
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => const AboutView()),
+        );
+      },
     );
   }
 }
@@ -298,9 +335,14 @@ class _DeveloperItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const SizedBox(),
+    return ListItem(
       leading: const Icon(Icons.developer_board),
       title: Text(context.appLocalizations.developerMode),
+       onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => const DeveloperView()),
+        );
+      },
     );
   }
 }
