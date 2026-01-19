@@ -5,6 +5,7 @@ class Tray {
   Future<void> setIcon(String icon) async {}
   Future<void> setToolTip(String tooltip) async {}
   Future<void> setContextMenu(Menu menu) async {}
+  Future<void> update({dynamic trayState}) async {}
 }
 
 final Tray? tray = Tray();

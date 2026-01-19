@@ -289,15 +289,12 @@ enum DashboardWidget {
   trafficUsage(GridItem(crossAxisCellCount: 4, child: TrafficUsage())),
   networkDetection(GridItem(crossAxisCellCount: 4, child: NetworkDetection())),
   tunButton(
-    GridItem(crossAxisCellCount: 4, child: TUNButton()),
     platforms: desktopPlatforms,
   ),
   vpnButton(
-    GridItem(crossAxisCellCount: 4, child: VpnButton()),
     platforms: [SupportPlatform.Android],
   ),
   systemProxyButton(
-    GridItem(crossAxisCellCount: 4, child: SystemProxyButton()),
     platforms: desktopPlatforms,
   ),
   intranetIp(GridItem(crossAxisCellCount: 4, child: IntranetIP())),

@@ -24,7 +24,7 @@ class _TileContainerState extends State<TileManager> with TileListener {
       return;
     }
     globalState.appController.updateStatus(true);
-    super.onStart();
+    
   }
 
   @override

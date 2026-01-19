@@ -16,7 +16,6 @@ class ApplicationSettingView extends ConsumerWidget {
         padding: const EdgeInsets.only(bottom: 20),
         children: const [
           _MinimizeItem(),
-          _NotificationItem(),
         ],
       ),
     );
@@ -48,26 +47,6 @@ class _MinimizeItem extends ConsumerWidget {
   }
 }
 
-class _NotificationItem extends ConsumerWidget {
-  const _NotificationItem();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final hideNotification = ref.watch(
-      appSettingProvider.select((state) => state.hideNotification),
-    );
-    
-    return ListItem.switchItem(
-      leading: const Icon(Icons.notifications_off),
-      title: Text(context.appLocalizations.hideNotification),
-      subtitle: Text(context.appLocalizations.hideNotificationDesc),
-      delegate: SwitchDelegate(
-        value: hideNotification,
-        onChanged: (bool value) {
-          ref.read(appSettingProvider.notifier).updateState(
-                (state) => state.copyWith(hideNotification: value),
-              );
-        },
       ),
     );
   }

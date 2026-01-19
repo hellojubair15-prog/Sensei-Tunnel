@@ -553,7 +553,7 @@ class AppController {
     updateTray(true);
     autoUpdateProfiles();
     autoCheckUpdate();
-    autoLaunch?.updateStatus(_ref.read(appSettingProvider).autoLaunch);
+    // autoLaunch?.updateStatus(_ref.read(appSettingProvider).autoLaunch);
     if (!_ref.read(appSettingProvider).silentLaunch) {
       window?.show();
     } else {
@@ -889,7 +889,7 @@ class AppController {
   }
 
   Future<void> updateTray([bool focus = false]) async {
-    tray?.update(trayState: _ref.read(trayStateProvider));
+    // tray?.update(trayState: _ref.read(trayStateProvider));
   }
 
   Future<void> recoveryData(

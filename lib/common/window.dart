@@ -4,6 +4,7 @@ class Window {
   Future<void> show() async {}
   Future<void> hide() async {}
   Future<void> close() async {}
+  Future<void> init(String version) async {}
   Future<bool> get isVisible async => true;
 }
 
