@@ -6,7 +6,6 @@ import 'package:sensei_tunnel/models/models.dart';
 import 'package:sensei_tunnel/state.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:tray_manager/tray_manager.dart';
 
 import 'app_localizations.dart';
 import 'constant.dart';
@@ -34,14 +33,11 @@ class Tray {
     required bool tunEnable,
   }) async {
     if (Platform.isLinux || force) {
-      await trayManager.destroy();
     }
-    await trayManager.setIcon(
       getTryIcon(isStart: isStart, tunEnable: tunEnable),
       isTemplate: true,
     );
     if (!Platform.isLinux) {
-      await trayManager.setToolTip(appName);
     }
   }
 
@@ -174,7 +170,6 @@ class Tray {
     );
     menuItems.add(exitMenuItem);
     final menu = Menu(items: menuItems);
-    await trayManager.setContextMenu(menu);
     if (system.isLinux) {
       await _updateSystemTray(
         isStart: trayState.isStart,
@@ -196,9 +191,7 @@ class Tray {
       return;
     }
     if (!showTrayTitle) {
-      await trayManager.setTitle('');
     } else {
-      await trayManager.setTitle(traffic.trayTitle);
     }
   }
 
