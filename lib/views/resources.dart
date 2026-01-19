@@ -152,7 +152,7 @@ class _GeoDataListItemState extends State<GeoDataListItem> {
                     SizedBox(
                       child: ValueListenableBuilder(
                         valueListenable: isUpdating,
-                        builder: (_, isUpdating, _) {
+                        builder: (_, isUpdating, __) {
                           return isUpdating
                               ? SizedBox(
                                   height: 30,

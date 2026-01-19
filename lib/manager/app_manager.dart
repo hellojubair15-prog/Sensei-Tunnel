@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:sensei_tunnel/common/common.dart';
 import 'package:sensei_tunnel/enum/enum.dart';
-import 'package:sensei_tunnel/manager/window_manager.dart';
 import 'package:sensei_tunnel/providers/providers.dart';
 import 'package:sensei_tunnel/state.dart';
 import 'package:flutter/foundation.dart';

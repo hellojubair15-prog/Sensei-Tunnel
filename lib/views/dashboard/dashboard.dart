@@ -35,7 +35,7 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
   Widget _buildIsEdit(_IsEditWidgetBuilder builder) {
     return ValueListenableBuilder(
       valueListenable: _isEditNotifier,
-      builder: (_, isEdit, _) {
+      builder: (_, isEdit, __) {
         return builder(isEdit);
       },
     );
@@ -180,7 +180,7 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
       builder: (_, type) {
         return ValueListenableBuilder(
           valueListenable: _addedWidgetsNotifier,
-          builder: (_, value, _) {
+          builder: (_, value, __) {
             return AdaptiveSheetScaffold(
               type: type,
               body: _AddDashboardWidgetModal(

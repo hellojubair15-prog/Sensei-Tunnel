@@ -343,7 +343,7 @@ class CommonScaffoldState extends State<CommonScaffold> {
           widget.floatingActionButton ??
           ValueListenableBuilder<Widget?>(
             valueListenable: _floatingActionButton,
-            builder: (_, value, _) {
+            builder: (_, value, __) {
               return value ?? SizedBox();
             },
           ),

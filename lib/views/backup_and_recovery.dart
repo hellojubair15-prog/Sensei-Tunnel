@@ -429,7 +429,7 @@ class _WebDAVFormDialogState extends ConsumerState<WebDAVFormDialog> {
             ),
             ValueListenableBuilder(
               valueListenable: _obscureController,
-              builder: (_, obscure, _) {
+              builder: (_, obscure, __) {
                 return TextFormField(
                   controller: passwordController,
                   obscureText: obscure,

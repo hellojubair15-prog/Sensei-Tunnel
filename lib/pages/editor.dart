@@ -101,7 +101,7 @@ class _EditorPageState extends ConsumerState<EditorPage> {
   Widget _wrapController(EditingValueChangeBuilder builder) {
     return ValueListenableBuilder(
       valueListenable: _controller,
-      builder: (_, value, _) {
+      builder: (_, value, __) {
         return builder(value);
       },
     );
@@ -110,7 +110,7 @@ class _EditorPageState extends ConsumerState<EditorPage> {
   Widget _wrapTitleController(TextEditingValueChangeBuilder builder) {
     return ValueListenableBuilder(
       valueListenable: _titleController,
-      builder: (_, value, _) {
+      builder: (_, value, __) {
         return builder(value);
       },
     );

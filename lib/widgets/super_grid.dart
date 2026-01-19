@@ -582,7 +582,7 @@ class SuperGridState extends State<SuperGrid> with TickerProviderStateMixin {
           _buildInactivate(
             ValueListenableBuilder(
               valueListenable: _childrenNotifier,
-              builder: (_, children, _) {
+              builder: (_, children, __) {
                 _onChildrenChange();
                 return Grid(
                   axisDirection: AxisDirection.down,

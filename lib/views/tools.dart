@@ -190,7 +190,6 @@ class _HotkeyItem extends StatelessWidget {
       leading: const Icon(Icons.keyboard),
       title: Text(context.appLocalizations.hotkeyManagement),
       subtitle: Text(context.appLocalizations.hotkeyManagementDesc),
-      delegate: OpenDelegate(widget: const HotKeyView()),
     );
   }
 }

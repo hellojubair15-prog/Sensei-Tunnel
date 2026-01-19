@@ -5,7 +5,6 @@ import 'package:sensei_tunnel/models/config.dart';
 import 'package:sensei_tunnel/state.dart';
 import 'package:flutter/material.dart';
 import 'package:screen_retriever/screen_retriever.dart';
-import 'package:window_manager/window_manager.dart';
 
 class Window {
   Future<void> init(int version) async {
