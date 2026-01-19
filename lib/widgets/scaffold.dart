@@ -264,7 +264,7 @@ class CommonScaffoldState extends State<CommonScaffold> {
           widget.appBar ??
               ValueListenableBuilder<AppBarState>(
                 valueListenable: _appBarState,
-                builder: (_, state, _) {
+                builder: (_, state, __) {
                   return _buildAppBarWrap(
                     AppBar(
                       automaticallyImplyLeading: backAction != null

@@ -90,7 +90,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
       onKeywordsUpdate: _onKeywordsUpdate,
       floatingActionButton: ValueListenableBuilder(
         valueListenable: _requestsStateNotifier,
-        builder: (_, state, _) {
+        builder: (_, state, __) {
           final autoScrollToEnd = state.autoScrollToEnd;
           return FadeRotationScaleBox(
             child: FloatingActionButton(

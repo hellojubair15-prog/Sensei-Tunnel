@@ -9,7 +9,6 @@ import 'package:sensei_tunnel/views/about.dart';
 import 'package:sensei_tunnel/views/access.dart';
 import 'package:sensei_tunnel/views/application_setting.dart';
 import 'package:sensei_tunnel/views/config/config.dart';
-import 'package:sensei_tunnel/views/hotkey.dart';
 import 'package:sensei_tunnel/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

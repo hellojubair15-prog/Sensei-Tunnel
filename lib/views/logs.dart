@@ -113,7 +113,7 @@ class _LogsViewState extends ConsumerState<LogsView> {
       title: appLocalizations.logs,
       floatingActionButton: ValueListenableBuilder(
         valueListenable: _logsStateNotifier,
-        builder: (_, state, _) {
+        builder: (_, state, __) {
           final autoScrollToEnd = state.autoScrollToEnd;
           return FadeRotationScaleBox(
             child: FloatingActionButton(

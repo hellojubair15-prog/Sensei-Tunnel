@@ -330,7 +330,7 @@ class _ProxiesListViewState extends State<ProxiesListView> {
                   containerHeight = container.maxHeight;
                   return ValueListenableBuilder(
                     valueListenable: _headerStateNotifier,
-                    builder: (_, headerState, _) {
+                    builder: (_, headerState, __) {
                       if (headerState == null) {
                         return SizedBox();
                       }

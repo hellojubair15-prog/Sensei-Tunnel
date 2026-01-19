@@ -9,7 +9,6 @@ import 'package:sensei_tunnel/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hotkey_manager/hotkey_manager.dart';
 
 enum SupportPlatform {
   Windows,

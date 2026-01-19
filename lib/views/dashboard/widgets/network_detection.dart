@@ -30,7 +30,7 @@ class _NetworkDetectionState extends ConsumerState<NetworkDetection> {
       height: getWidgetHeight(1),
       child: ValueListenableBuilder<NetworkDetectionState>(
         valueListenable: detectionState.state,
-        builder: (_, state, _) {
+        builder: (_, state, __) {
           final ipInfo = state.ipInfo;
           final isLoading = state.isLoading;
           return CommonCard(
