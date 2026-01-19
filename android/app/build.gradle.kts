@@ -26,7 +26,7 @@ val isRelease =
 
 android {
     namespace = "com.sensei.tunnel"
-    compileSdk = 34 // সরাসরি লেটেস্ট ভার্সন সেট করা হলো
+    compileSdk = 34
     ndkVersion = libs.versions.ndkVersion.get()
 
     compileOptions {
@@ -36,15 +36,11 @@ android {
 
     defaultConfig {
         applicationId = "com.sensei.tunnel"
-        minSdk = 21 // অ্যান্ড্রয়েড ৫.০ থেকে সব ফোনে সাপোর্ট করবে
-        targetSdk = 34 // অ্যান্ড্রয়েড ১৪ এর জন্য অপ্টিমাইজড
+        minSdk = 21
+        targetSdk = 34
         versionCode = flutter.versionCode
         versionName = flutter.versionName
-
-        // শুধুমাত্র মোবাইল আর্কিটেকচারগুলো রাখা হয়েছে
-        ndk {
-            abiFilters.addAll(listOf("armeabi-v7a", "arm64-v8a", "x86_64"))
-        }
+        // ndk ব্লকটি সরিয়ে ফেলা হয়েছে কনফ্লিক্ট এড়ানোর জন্য
     }
 
     signingConfigs {
@@ -62,7 +58,6 @@ android {
         jniLibs {
             useLegacyPackaging = true
         }
-        // অপ্রয়োজনীয় ফাইল বাদ দিয়ে APK সাইজ কমানো
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
             excludes += "**/LICENSE.txt"
@@ -76,8 +71,8 @@ android {
         }
 
         release {
-            isMinifyEnabled = true // কোড অপ্টিমাইজ করবে
-            isShrinkResources = true // অপ্রয়োজনীয় ছবি/ফাইল বাদ দেবে
+            isMinifyEnabled = true
+            isShrinkResources = true
             signingConfig = if (isRelease) {
                 signingConfigs.getByName("release")
             } else {
