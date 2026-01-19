@@ -3,7 +3,7 @@ name: Build Sensei Tunnel APK
 on:
   push:
     branches:
-      - main  # আপনার মেইন ব্রাঞ্চের নাম main হলে এটি রাখুন
+      - main
 
 jobs:
   build:
@@ -22,11 +22,12 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.0' # আপনি চাইলে আপনার পছন্দমতো ভার্সন দিতে পারেন
-          channel: 'stable'
+          channel: 'stable' # এটি অটোমেটিক লেটেস্ট ভার্সন নিয়ে নেবে
 
       - name: Install dependencies
-        run: flutter pub get
+        run: |
+          flutter pub cache clean -f
+          flutter pub get
 
       - name: Build APK
         run: flutter build apk --release --target-platform android-arm,android-arm64,android-x64 --split-per-abi
