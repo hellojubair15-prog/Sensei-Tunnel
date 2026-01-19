@@ -26,7 +26,7 @@ val isRelease =
 
 android {
     namespace = "com.sensei.tunnel"
-    compileSdk = 35
+    compileSdk = 36
     ndkVersion = libs.versions.ndkVersion.get()
 
     compileOptions {
@@ -37,7 +37,7 @@ android {
     defaultConfig {
         applicationId = "com.sensei.tunnel"
         minSdk = 21
-        targetSdk = 35
+        targetSdk = 36
         versionCode = flutter.versionCode
         versionName = flutter.versionName
         // ndk ব্লকটি সরিয়ে ফেলা হয়েছে কনফ্লিক্ট এড়ানোর জন্য
